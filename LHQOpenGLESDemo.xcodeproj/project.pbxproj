@@ -17,6 +17,7 @@
 		2932BB9A243F1AFD0079C2B7 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2932BB99243F1AFD0079C2B7 /* GLKit.framework */; };
 		2932BB9C243F1BFD0079C2B7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2932BB9B243F1BFD0079C2B7 /* OpenGLES.framework */; };
 		2932BBA0243F1F650079C2B7 /* GLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2932BB9F243F1F650079C2B7 /* GLMainViewController.m */; };
+		29AD4A792440AE24007CE4F7 /* OpenGLES_Class_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD4A782440AE24007CE4F7 /* OpenGLES_Class_1.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		2932BB9B243F1BFD0079C2B7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		2932BB9E243F1F650079C2B7 /* GLMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLMainViewController.h; sourceTree = "<group>"; };
 		2932BB9F243F1F650079C2B7 /* GLMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLMainViewController.m; sourceTree = "<group>"; };
+		29AD4A772440AE24007CE4F7 /* OpenGLES_Class_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLES_Class_1.h; sourceTree = "<group>"; };
+		29AD4A782440AE24007CE4F7 /* OpenGLES_Class_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLES_Class_1.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 			children = (
 				2932BB9E243F1F650079C2B7 /* GLMainViewController.h */,
 				2932BB9F243F1F650079C2B7 /* GLMainViewController.m */,
+				29AD4A772440AE24007CE4F7 /* OpenGLES_Class_1.h */,
+				29AD4A782440AE24007CE4F7 /* OpenGLES_Class_1.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2932BB87243F17FF0079C2B7 /* ViewController.m in Sources */,
+				29AD4A792440AE24007CE4F7 /* OpenGLES_Class_1.m in Sources */,
 				2932BB81243F17FF0079C2B7 /* AppDelegate.m in Sources */,
 				2932BB92243F18040079C2B7 /* main.m in Sources */,
 				2932BB84243F17FF0079C2B7 /* SceneDelegate.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "GLMainViewController.h"
+#import "OpenGLES_Class_1.h"
 
 @interface GLMainViewController ()<UITableViewDataSource , UITableViewDelegate>
 
@@ -23,9 +24,7 @@
     
     [self.view addSubview:self.tableView];
     
-    self.dataSouce = [NSMutableArray arrayWithObjects:@"demo1",@"demo2", nil];
-    
-    // text
+    self.dataSouce = [NSMutableArray arrayWithObjects:@"OpenGLES_Class_1",@"demo2", nil];
 }
 
 #pragma mark - UITableViewDataSource
@@ -43,7 +42,9 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    Class class = NSClassFromString(self.dataSouce[indexPath.row]);
+     
+    [self.navigationController pushViewController:[class new] animated:YES];
 }
 
 #pragma mark - Lazy Load
