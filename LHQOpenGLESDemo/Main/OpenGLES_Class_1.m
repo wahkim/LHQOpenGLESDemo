@@ -29,6 +29,8 @@ static const SceneVertex vertices[] =
     
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor orangeColor];
+    
     GLKView *view = (GLKView *)self.view;
     NSAssert([view isKindOfClass:[GLKView class]],
        @"View controller's view is not a GLKView");
@@ -44,7 +46,7 @@ static const SceneVertex vertices[] =
     // 使用恒定不变的颜色，即白色
     self.baseEffect.useConstantColor = GL_TRUE;
     self.baseEffect.constantColor = GLKVector4Make(
-       1.0f, // Red
+       0.4f, // Red
        1.0f, // Green
        1.0f, // Blue
        1.0f);// Alpha
@@ -52,7 +54,7 @@ static const SceneVertex vertices[] =
     
     // “清除颜色” like 背景色
     // 用于上下帧被清除时初始化每个像素的值
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClearColor(198/255.0, 164/255.0, 249/255.0, 1.0f);
     
     // 为缓存生成独一无的标识符
     // @param n 指定要生成的标识符数量
@@ -77,58 +79,60 @@ static const SceneVertex vertices[] =
                  GL_STATIC_DRAW);
 }
 
-// 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
+    // 准备绘图
    [self.baseEffect prepareToDraw];
    
-   // Clear Frame Buffer (erase previous drawing)
-   glClear(GL_COLOR_BUFFER_BIT);
+    // 设置当前绑定的的帧缓存的像素颜色渲染缓存中的每一个像素颜色为前面使用的glClearColor()函数设定的值
+    // 有效的设置帧缓存中的每一个像素的颜色为背景色
+    glClear(GL_COLOR_BUFFER_BIT);
    
-   // Enable use of positions from bound vertex buffer
+   // 启动顶点渲染缓存渲染操作
    glEnableVertexAttribArray(      // STEP 4
       GLKVertexAttribPosition);
-      
+    
+    // 告诉顶点数据在哪里
    glVertexAttribPointer(          // STEP 5
-      GLKVertexAttribPosition,
-      3,                   // three components per vertex
-      GL_FLOAT,            // data is floating point
-      GL_FALSE,            // no fixed point scaling
-      sizeof(SceneVertex), // no gaps in data
-      NULL);               // NULL tells GPU to start at
+      GLKVertexAttribPosition, // 指示当前绑定的缓存包含每个顶点的位置的信息
+      3,                   // 每个位置有三个部分
+      GL_FLOAT,            // 每个部分多保存为一个浮点类型的值
+      GL_FALSE,            // 小数点固定数据是否可以被改变
+      sizeof(SceneVertex), // “部幅”，指定每个顶点保存需要多少个字节
+      NULL);               // 从当前绑定的顶点缓存开始访问顶点数据
                            // beginning of bound buffer
                                    
-   // Draw triangles using the first three vertices in the
-   // currently bound vertex buffer
-   glDrawArrays(GL_TRIANGLES,      // STEP 6
-      0,  // Start with first vertex in currently bound buffer
-      3); // Use three vertices from currently bound buffer
+   // 执行绘图 STEP 6
+   glDrawArrays(GL_TRIANGLES,      // 怎么处理在绑定的顶点缓存内顶点数据
+      0,  // 顶点的位置
+      3); // 顶点的数量
 }
 
 
-/////////////////////////////////////////////////////////////////
-// Called when the view controller's view has been unloaded
-// Perform clean-up that is possible when you know the view
-// controller's view won't be asked to draw again soon.
-- (void)viewDidUnload
-{
-   [super viewDidUnload];
-   
-   // Make the view's context current
-   GLKView *view = (GLKView *)self.view;
-   [EAGLContext setCurrentContext:view.context];
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
     
-   // Delete buffers that aren't needed when view is unloaded
-   if (0 != vertexBufferID)
-   {
-      glDeleteBuffers (1,          // STEP 7
-                       &vertexBufferID);
-      vertexBufferID = 0;
-   }
-   
-   // Stop using the context created in -viewDidLoad
-   ((GLKView *)self.view).context = nil;
-   [EAGLContext setCurrentContext:nil];
 }
+
+// 视图卸载时 清除缓存 上下文
+- (void)dealloc {
+    
+    // Make the view's context current
+    GLKView *view = (GLKView *)self.view;
+    [EAGLContext setCurrentContext:view.context];
+     
+    // Delete buffers that aren't needed when view is unloaded
+    if (0 != vertexBufferID)
+    {
+       glDeleteBuffers (1,          // STEP 7
+                        &vertexBufferID);
+       vertexBufferID = 0;
+    }
+    
+    // Stop using the context created in -viewDidLoad
+    ((GLKView *)self.view).context = nil;
+    [EAGLContext setCurrentContext:nil];
+}
+
 
 @end
