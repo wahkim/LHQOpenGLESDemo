@@ -10,6 +10,7 @@
 
 @implementation OpenGLES_Class_1
 
+@synthesize baseEffect;
 
 typedef struct {
     // 矢量保存坐标 {x,y,z}
