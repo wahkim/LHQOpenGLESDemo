@@ -27,13 +27,15 @@ typedef struct {
 }
 SceneVertex;
 
-/////////////////////////////////////////////////////////////////
-// Define vertex data for a triangle to use in example
 static const SceneVertex vertices[] =
 {
-   {{-0.5f, -0.5f, 0.0f}, {0.0f, 0.0f}}, // lower left corner
-   {{ 0.5f, -0.5f, 0.0f}, {1.0f, 0.0f}}, // lower right corner
-   {{-0.5f,  0.5f, 0.0f}, {0.0f, 1.0f}}, // upper left corner
+   {{-0.5f, -0.5f, 0.0f}, {0.0f, 0.0f}}, // 左下
+   {{ 0.5f, -0.5f, 0.0f}, {1.0f, 0.0f}}, // 右下
+   {{-0.5f,  0.5f, 0.0f}, {0.0f, 1.0f}}, // 左上
+    
+    {{-0.5f,  0.5f, 0.0f}, {0.0f, 1.0f}}, // 左上
+    {{ 0.5f, -0.5f, 0.0f}, {1.0f, 0.0f}}, // 右下
+    {{ 0.5f, 0.5f, 0.0f}, {1.0f, 1.0f}}, // 右下
 };
 
 - (void)viewDidLoad {
@@ -43,11 +45,7 @@ static const SceneVertex vertices[] =
     
     GLKView *view = [[GLKView alloc]init];
     self.view = view;
-    
-//    GLKView *view = (GLKView *)self.view;
-//    NSAssert([view isKindOfClass:[GLKView class]],
-//       @"View controller's view is not a GLKView");
-    
+
     view.context = [[AGLKContext alloc]
        initWithAPI:kEAGLRenderingAPIOpenGLES2];
     
@@ -62,11 +60,9 @@ static const SceneVertex vertices[] =
        1.0f, // Blue
        1.0f);// Alpha
     
-    // Set the background color stored in the current context
     ((AGLKContext *)view.context).clearColor = GLKVector4Make(
        198/255.0, 164/255.0, 249/255.0, 1.0f);// Alpha
     
-    // Create vertex buffer containing vertices to draw
     self.vertexBuffer = [[AGLKVertexAttribArrayBuffer alloc]
                          initWithAttribStride:sizeof(SceneVertex)
                          numberOfVertices:sizeof(vertices) / sizeof(SceneVertex)
@@ -76,10 +72,11 @@ static const SceneVertex vertices[] =
     // Setup texture
     CGImageRef imageRef =
        [[UIImage imageNamed:@"leaves.gif"] CGImage];
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:@(1), GLKTextureLoaderOriginBottomLeft, nil];
 
     GLKTextureInfo *textureInfo = [GLKTextureLoader
        textureWithCGImage:imageRef
-       options:nil
+       options:options
        error:NULL];
 
     self.baseEffect.texture2d0.name = textureInfo.name;
@@ -89,7 +86,7 @@ static const SceneVertex vertices[] =
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
    [self.baseEffect prepareToDraw];
-   
+      
    // Clear back frame buffer (erase previous drawing)
    [(AGLKContext *)view.context clear:GL_COLOR_BUFFER_BIT];
    
@@ -106,7 +103,7 @@ static const SceneVertex vertices[] =
    // currently bound vertex buffer
    [self.vertexBuffer drawArrayWithMode:GL_TRIANGLES
       startVertexIndex:0
-      numberOfVertices:3];
+      numberOfVertices:6];
 }
 
 - (void)viewDidUnload
