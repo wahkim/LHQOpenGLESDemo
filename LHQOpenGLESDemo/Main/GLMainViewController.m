@@ -7,8 +7,9 @@
 //
 
 #import "GLMainViewController.h"
-#import "OpenGLES_Class_1.h"
-#import "OpenGLES_Class_2.h"
+#import "OpenGLES_Class_1_1.h"
+#import "OpenGLES_Class_1_2.h"
+#import "OpenGLES_Class_2_1.h"
 
 @interface GLMainViewController ()<UITableViewDataSource , UITableViewDelegate>
 
@@ -25,7 +26,10 @@
     
     [self.view addSubview:self.tableView];
     
-    self.dataSouce = [NSMutableArray arrayWithObjects:@"OpenGLES_Class_1",@"OpenGLES_Class_2", nil];
+    self.dataSouce = [NSMutableArray arrayWithObjects:
+                      @"OpenGLES_Class_1_1",
+                      @"OpenGLES_Class_1_2",
+                      @"OpenGLES_Class_2_1",nil];
 }
 
 #pragma mark - UITableViewDataSource
@@ -44,10 +48,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:[NSString stringWithFormat:@"Storyboard_%ld",indexPath.row+1] bundle:nil];
-
-    UIViewController *temp = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:[NSString stringWithFormat:@"OpenGLES_Class_%ld",indexPath.row+1]];
-    [self.navigationController pushViewController:temp animated:YES];
+//    UIViewController *view;
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:self.dataSouce[indexPath.row] bundle:nil];
+//    if (storyboard) {
+//        view = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:self.dataSouce[indexPath.row]];
+//    } else {
+//        view = (UIViewController *)NSClassFromString(self.dataSouce[indexPath.row]);
+//    }
+//    UIViewController *temp = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:self.dataSouce[indexPath.row]];
+     Class class = NSClassFromString(self.dataSouce[indexPath.row]);
+    [self.navigationController pushViewController:[class new] animated:YES];
      
 }
 
