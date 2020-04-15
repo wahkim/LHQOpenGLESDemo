@@ -94,6 +94,7 @@ static const SceneVertex vertices[] =
       numberOfCoordinates:3
       attribOffset:offsetof(SceneVertex, positionCoords)
       shouldEnable:YES];
+    
    [self.vertexBuffer prepareToDrawWithAttrib:GLKVertexAttribTexCoord0
       numberOfCoordinates:2
       attribOffset:offsetof(SceneVertex, textureCoords)

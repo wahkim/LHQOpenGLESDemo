@@ -52,21 +52,6 @@ static GLKVector3 movementVectors[3] = {
    {-0.01f,   0.01f, 0.0f},
 };
 
-- (void)updateTextureParameters
-{
-    glBindTexture(self.baseEffect.texture2d0.target,
-                  self.baseEffect.texture2d0.name);
-    glTexParameteri(self.baseEffect.texture2d0.target,
-                    GL_TEXTURE_WRAP_T,
-                    (self.shouldRepeatTexture ?GL_REPEAT : GL_CLAMP_TO_EDGE));
-    
-    glBindTexture(self.baseEffect.texture2d0.target,
-                  self.baseEffect.texture2d0.name);
-    glTexParameteri(self.baseEffect.texture2d0.target,
-                    GL_TEXTURE_MAG_FILTER,
-                    (self.shouldUseLinearFilter ? GL_LINEAR : GL_NEAREST));
-}
-
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad
@@ -89,7 +74,7 @@ static GLKVector3 movementVectors[3] = {
     self.mView.context = self.mContext;
     [EAGLContext setCurrentContext:self.mContext];
     
-    self.preferredFramesPerSecond = 60;
+    self.preferredFramesPerSecond = 60; // 更新视图的速率 默认值为30每秒帧数
     self.shouldAnimate = YES;
     self.shouldRepeatTexture = YES;
 }
@@ -129,6 +114,7 @@ static GLKVector3 movementVectors[3] = {
     bytes:vertices
     usage:GL_DYNAMIC_DRAW];
     
+    // 渲染纹理坐标做好准备
     [self.vertexBuffer prepareToDrawWithAttrib:GLKVertexAttribPosition
        numberOfCoordinates:3
        attribOffset:offsetof(SceneVertex, positionCoords)
@@ -160,6 +146,8 @@ static GLKVector3 movementVectors[3] = {
 }
 
 
+
+
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     // 背景色
@@ -169,16 +157,53 @@ static GLKVector3 movementVectors[3] = {
     // 启动着色器
    [self.baseEffect prepareToDraw];
       
+    // 开始渲染
    [self.vertexBuffer drawArrayWithMode:GL_TRIANGLES
       startVertexIndex:0
       numberOfVertices:3];
 }
 
+#pragma mark - Update Method
+
+- (void)updateTextureParameters
+{
+    // 配置每个绑定的纹理
+    glBindTexture(self.baseEffect.texture2d0.target,
+                  self.baseEffect.texture2d0.name);
+    glTexParameteri(self.baseEffect.texture2d0.target,
+                    GL_TEXTURE_WRAP_T,
+                    (self.shouldRepeatTexture ?GL_REPEAT : GL_CLAMP_TO_EDGE));
+    
+    glBindTexture(self.baseEffect.texture2d0.target, // GLKTextureTarget2D
+                  self.baseEffect.texture2d0.name);
+    glTexParameteri(self.baseEffect.texture2d0.target,
+                    GL_TEXTURE_MAG_FILTER,
+                    (self.shouldUseLinearFilter ? GL_LINEAR : GL_NEAREST));
+    
+    /**
+     《TextureParameterName》
+     GL_TEXTURE_MAG_FILTER 用于在没有足够的可用纹素来唯一性的映射一个或者多个纹素到每个片元上时配置取样
+     GL_TEXTURE_MIN_FILTER
+     GL_TEXTURE_WRAP_S
+     GL_TEXTURE_WRAP_T
+     
+    《TextureWrapMode》
+     GL_REPEAT
+     GL_CLAMP_TO_EDGE
+     GL_MIRRORED_REPEAT
+     
+    《TextureMagFilter》
+     GL_LINEAR  放大纹理效果，模糊出现在渲染的三角形上
+     GL_NEAREST 拾取与片元的U、V位置接近的纹素的颜色
+     */
+}
+
 - (void)updateAnimatedVertexPositions
 {
+    // 开启动画
    if(shouldAnimate)
-   {  // Animate the triangles vertex positions
-      int i;  // by convention, 'i' is current vertex index
+   {
+      int i;
       
       for(i = 0; i < 3; i++)
       {
@@ -202,31 +227,27 @@ static GLKVector3 movementVectors[3] = {
          }
       }
    }
+    // 关闭动画 （回到初始位置）
    else
-   {  // Restore the triangle vertex positions to defaults
-      int    i;  // by convention, 'i' is current vertex index
+   {
+      int i;
       
       for(i = 0; i < 3; i++)
       {
-         vertices[i].positionCoords.x =
-            defaultVertices[i].positionCoords.x;
-         vertices[i].positionCoords.y =
-            defaultVertices[i].positionCoords.y;
-         vertices[i].positionCoords.z =
-            defaultVertices[i].positionCoords.z;
+         vertices[i].positionCoords.x = defaultVertices[i].positionCoords.x;
+         vertices[i].positionCoords.y = defaultVertices[i].positionCoords.y;
+         vertices[i].positionCoords.z = defaultVertices[i].positionCoords.z;
+            
       }
    }
    
    
-   {  // Adjust the S texture coordinates to slide texture and
-      // reveal effect of texture repeat vs. clamp behavior
-      int    i;  // 'i' is current vertex index
+   {
+      int i;
       
       for(i = 0; i < 3; i++)
       {
-         vertices[i].textureCoords.t =
-            (defaultVertices[i].textureCoords.t +
-             sCoordinateOffset);
+         vertices[i].textureCoords.t = (defaultVertices[i].textureCoords.t + sCoordinateOffset);
       }
    }
 }
@@ -243,31 +264,32 @@ static GLKVector3 movementVectors[3] = {
 
 #pragma mark - Actions Method
 
-- (void)takeShouldUseFrom:(UISwitch *)sender {
-    
+- (void)takeShouldUseFrom:(UISwitch *)sender
+{
     switch (sender.tag) {
         case 0:
         {
             self.shouldUseLinearFilter = [sender isOn];
         }
             break;
-            case 1:
-            {
-                self.shouldAnimate = [sender isOn];
-            }
-                break;
-            case 2:
-            {
-                self.shouldRepeatTexture = [sender isOn];
-            }
-                break;
+        case 1:
+        {
+          self.shouldAnimate = [sender isOn];
+        }
+            break;
+        case 2:
+        {
+            self.shouldRepeatTexture = [sender isOn];
+        }
+            break;
             
         default:
             break;
     }
 }
 
-- (void)sliderChange:(UISlider *)sender {
+- (void)sliderChange:(UISlider *)sender
+{
     self.sCoordinateOffset = [sender value];
 }
 

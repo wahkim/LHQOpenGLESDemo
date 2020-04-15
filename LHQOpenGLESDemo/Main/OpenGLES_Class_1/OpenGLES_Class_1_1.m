@@ -49,6 +49,7 @@ static const SceneVertex vertices[] =
     self.baseEffect = [[GLKBaseEffect alloc] init];
     // 使用恒定不变的颜色，即白色
     self.baseEffect.useConstantColor = GL_TRUE;
+    // 不提供每个顶点颜色数据时使用的恒定颜色
     self.baseEffect.constantColor = GLKVector4Make(
        0.4f, // Red
        1.0f, // Green
