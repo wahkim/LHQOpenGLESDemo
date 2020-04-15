@@ -17,7 +17,19 @@
 		2932BB9A243F1AFD0079C2B7 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2932BB99243F1AFD0079C2B7 /* GLKit.framework */; };
 		2932BB9C243F1BFD0079C2B7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2932BB9B243F1BFD0079C2B7 /* OpenGLES.framework */; };
 		2932BBA0243F1F650079C2B7 /* GLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2932BB9F243F1F650079C2B7 /* GLMainViewController.m */; };
-		29AD4A792440AE24007CE4F7 /* OpenGLES_Class_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD4A782440AE24007CE4F7 /* OpenGLES_Class_1.m */; };
+		297288BF24456C0200FD7A8D /* OpenGLES_Class_2_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 297288BD24456C0200FD7A8D /* OpenGLES_Class_2_1.m */; };
+		297288CB24456D8000FD7A8D /* OpenGL_ES_for_iOS_72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 297288C424456D8000FD7A8D /* OpenGL_ES_for_iOS_72x72.png */; };
+		297288CC24456D8000FD7A8D /* OpenGL_ES_for_iOS_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 297288C524456D8000FD7A8D /* OpenGL_ES_for_iOS_57x57.png */; };
+		297288CD24456D8000FD7A8D /* trail.binary in Resources */ = {isa = PBXBuildFile; fileRef = 297288C624456D8000FD7A8D /* trail.binary */; };
+		297288CE24456D8000FD7A8D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 297288C724456D8000FD7A8D /* Default-568h@2x.png */; };
+		297288CF24456D8000FD7A8D /* OpenGL_ES_for_iOS_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 297288C824456D8000FD7A8D /* OpenGL_ES_for_iOS_114x114.png */; };
+		297288D024456D8000FD7A8D /* leaves.gif in Resources */ = {isa = PBXBuildFile; fileRef = 297288C924456D8000FD7A8D /* leaves.gif */; };
+		297288D124456D8000FD7A8D /* beetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 297288CA24456D8000FD7A8D /* beetle.png */; };
+		29AD4A792440AE24007CE4F7 /* OpenGLES_Class_1_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD4A782440AE24007CE4F7 /* OpenGLES_Class_1_1.m */; };
+		29D60DBE2446D5C8009C74DD /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D60DBD2446D5C8009C74DD /* Metal.framework */; };
+		29D60DC02446D5D1009C74DD /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D60DBF2446D5D1009C74DD /* MetalKit.framework */; };
+		29D60DC42446E941009C74DD /* OpenGLES_Class_2_2.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D60DC22446E941009C74DD /* OpenGLES_Class_2_2.m */; };
+		29D60DC72446ED1F009C74DD /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D60DC62446ED1F009C74DD /* grid.png */; };
 		B52DC40F2444B27200D673DC /* AGLKView.m in Sources */ = {isa = PBXBuildFile; fileRef = B52DC3F22444B27200D673DC /* AGLKView.m */; };
 		B52DC4102444B27200D673DC /* AGLKTextureTransformBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = B52DC3F32444B27200D673DC /* AGLKTextureTransformBaseEffect.m */; };
 		B52DC4112444B27200D673DC /* AGLKContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B52DC3F52444B27200D673DC /* AGLKContext.m */; };
@@ -39,9 +51,7 @@
 		B52DC4232444BA2600D673DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52DC4222444BA2600D673DC /* UIKit.framework */; };
 		B52DC4252444BA3D00D673DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52DC4242444BA3D00D673DC /* CoreGraphics.framework */; };
 		B52DC4272444BA4800D673DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52DC4262444BA4800D673DC /* Foundation.framework */; };
-		B52DC42A2444BADE00D673DC /* OpenGLES_Class_2.m in Sources */ = {isa = PBXBuildFile; fileRef = B52DC4292444BADE00D673DC /* OpenGLES_Class_2.m */; };
-		B52DC42C2444C0F700D673DC /* Storyboard_2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52DC42B2444C0F700D673DC /* Storyboard_2.storyboard */; };
-		B52DC42E2444C5C500D673DC /* Storyboard_1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52DC42D2444C5C500D673DC /* Storyboard_1.storyboard */; };
+		B52DC42A2444BADE00D673DC /* OpenGLES_Class_1_2.m in Sources */ = {isa = PBXBuildFile; fileRef = B52DC4292444BADE00D673DC /* OpenGLES_Class_1_2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,8 +71,22 @@
 		2932BB9B243F1BFD0079C2B7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		2932BB9E243F1F650079C2B7 /* GLMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLMainViewController.h; sourceTree = "<group>"; };
 		2932BB9F243F1F650079C2B7 /* GLMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLMainViewController.m; sourceTree = "<group>"; };
-		29AD4A772440AE24007CE4F7 /* OpenGLES_Class_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLES_Class_1.h; sourceTree = "<group>"; };
-		29AD4A782440AE24007CE4F7 /* OpenGLES_Class_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLES_Class_1.m; sourceTree = "<group>"; };
+		297288BC24456C0200FD7A8D /* OpenGLES_Class_2_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLES_Class_2_1.h; sourceTree = "<group>"; };
+		297288BD24456C0200FD7A8D /* OpenGLES_Class_2_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLES_Class_2_1.m; sourceTree = "<group>"; };
+		297288C424456D8000FD7A8D /* OpenGL_ES_for_iOS_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpenGL_ES_for_iOS_72x72.png; sourceTree = "<group>"; };
+		297288C524456D8000FD7A8D /* OpenGL_ES_for_iOS_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpenGL_ES_for_iOS_57x57.png; sourceTree = "<group>"; };
+		297288C624456D8000FD7A8D /* trail.binary */ = {isa = PBXFileReference; lastKnownFileType = file; path = trail.binary; sourceTree = "<group>"; };
+		297288C724456D8000FD7A8D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		297288C824456D8000FD7A8D /* OpenGL_ES_for_iOS_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpenGL_ES_for_iOS_114x114.png; sourceTree = "<group>"; };
+		297288C924456D8000FD7A8D /* leaves.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = leaves.gif; sourceTree = "<group>"; };
+		297288CA24456D8000FD7A8D /* beetle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beetle.png; sourceTree = "<group>"; };
+		29AD4A772440AE24007CE4F7 /* OpenGLES_Class_1_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLES_Class_1_1.h; sourceTree = "<group>"; };
+		29AD4A782440AE24007CE4F7 /* OpenGLES_Class_1_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLES_Class_1_1.m; sourceTree = "<group>"; };
+		29D60DBD2446D5C8009C74DD /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		29D60DBF2446D5D1009C74DD /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		29D60DC12446E941009C74DD /* OpenGLES_Class_2_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLES_Class_2_2.h; sourceTree = "<group>"; };
+		29D60DC22446E941009C74DD /* OpenGLES_Class_2_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLES_Class_2_2.m; sourceTree = "<group>"; };
+		29D60DC62446ED1F009C74DD /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid.png; sourceTree = "<group>"; };
 		B52DC3F12444B27200D673DC /* AGLKTextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGLKTextureLoader.h; sourceTree = "<group>"; };
 		B52DC3F22444B27200D673DC /* AGLKView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGLKView.m; sourceTree = "<group>"; };
 		B52DC3F32444B27200D673DC /* AGLKTextureTransformBaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGLKTextureTransformBaseEffect.m; sourceTree = "<group>"; };
@@ -96,10 +120,8 @@
 		B52DC4222444BA2600D673DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B52DC4242444BA3D00D673DC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B52DC4262444BA4800D673DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B52DC4282444BADE00D673DC /* OpenGLES_Class_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLES_Class_2.h; sourceTree = "<group>"; };
-		B52DC4292444BADE00D673DC /* OpenGLES_Class_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLES_Class_2.m; sourceTree = "<group>"; };
-		B52DC42B2444C0F700D673DC /* Storyboard_2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard_2.storyboard; sourceTree = "<group>"; };
-		B52DC42D2444C5C500D673DC /* Storyboard_1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard_1.storyboard; sourceTree = "<group>"; };
+		B52DC4282444BADE00D673DC /* OpenGLES_Class_1_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLES_Class_1_2.h; sourceTree = "<group>"; };
+		B52DC4292444BADE00D673DC /* OpenGLES_Class_1_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLES_Class_1_2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +130,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2932BB9C243F1BFD0079C2B7 /* OpenGLES.framework in Frameworks */,
+				29D60DC02446D5D1009C74DD /* MetalKit.framework in Frameworks */,
 				B52DC4272444BA4800D673DC /* Foundation.framework in Frameworks */,
+				29D60DBE2446D5C8009C74DD /* Metal.framework in Frameworks */,
 				B52DC4232444BA2600D673DC /* UIKit.framework in Frameworks */,
 				2932BB9A243F1AFD0079C2B7 /* GLKit.framework in Frameworks */,
 				B52DC4252444BA3D00D673DC /* CoreGraphics.framework in Frameworks */,
@@ -143,6 +167,7 @@
 				2932BB80243F17FF0079C2B7 /* AppDelegate.m */,
 				2932BB82243F17FF0079C2B7 /* SceneDelegate.h */,
 				2932BB83243F17FF0079C2B7 /* SceneDelegate.m */,
+				297288C324456D0C00FD7A8D /* Resource */,
 				B52DC3F02444B27200D673DC /* AGLKit */,
 				2932BB9D243F1F260079C2B7 /* Main */,
 				2932BB85243F17FF0079C2B7 /* ViewController.h */,
@@ -159,6 +184,8 @@
 		2932BB98243F1AFD0079C2B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				29D60DBF2446D5D1009C74DD /* MetalKit.framework */,
+				29D60DBD2446D5C8009C74DD /* Metal.framework */,
 				B52DC4262444BA4800D673DC /* Foundation.framework */,
 				B52DC4242444BA3D00D673DC /* CoreGraphics.framework */,
 				B52DC4222444BA2600D673DC /* UIKit.framework */,
@@ -174,14 +201,47 @@
 			children = (
 				2932BB9E243F1F650079C2B7 /* GLMainViewController.h */,
 				2932BB9F243F1F650079C2B7 /* GLMainViewController.m */,
-				29AD4A772440AE24007CE4F7 /* OpenGLES_Class_1.h */,
-				29AD4A782440AE24007CE4F7 /* OpenGLES_Class_1.m */,
-				B52DC42D2444C5C500D673DC /* Storyboard_1.storyboard */,
-				B52DC4282444BADE00D673DC /* OpenGLES_Class_2.h */,
-				B52DC4292444BADE00D673DC /* OpenGLES_Class_2.m */,
-				B52DC42B2444C0F700D673DC /* Storyboard_2.storyboard */,
+				297288BA24456B8F00FD7A8D /* OpenGLES_Class_1 */,
+				297288BB24456BB800FD7A8D /* OpenGLES_Class_2 */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		297288BA24456B8F00FD7A8D /* OpenGLES_Class_1 */ = {
+			isa = PBXGroup;
+			children = (
+				29AD4A772440AE24007CE4F7 /* OpenGLES_Class_1_1.h */,
+				29AD4A782440AE24007CE4F7 /* OpenGLES_Class_1_1.m */,
+				B52DC4282444BADE00D673DC /* OpenGLES_Class_1_2.h */,
+				B52DC4292444BADE00D673DC /* OpenGLES_Class_1_2.m */,
+			);
+			path = OpenGLES_Class_1;
+			sourceTree = "<group>";
+		};
+		297288BB24456BB800FD7A8D /* OpenGLES_Class_2 */ = {
+			isa = PBXGroup;
+			children = (
+				297288BC24456C0200FD7A8D /* OpenGLES_Class_2_1.h */,
+				297288BD24456C0200FD7A8D /* OpenGLES_Class_2_1.m */,
+				29D60DC12446E941009C74DD /* OpenGLES_Class_2_2.h */,
+				29D60DC22446E941009C74DD /* OpenGLES_Class_2_2.m */,
+			);
+			path = OpenGLES_Class_2;
+			sourceTree = "<group>";
+		};
+		297288C324456D0C00FD7A8D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				29D60DC62446ED1F009C74DD /* grid.png */,
+				297288CA24456D8000FD7A8D /* beetle.png */,
+				297288C724456D8000FD7A8D /* Default-568h@2x.png */,
+				297288C924456D8000FD7A8D /* leaves.gif */,
+				297288C524456D8000FD7A8D /* OpenGL_ES_for_iOS_57x57.png */,
+				297288C424456D8000FD7A8D /* OpenGL_ES_for_iOS_72x72.png */,
+				297288C824456D8000FD7A8D /* OpenGL_ES_for_iOS_114x114.png */,
+				297288C624456D8000FD7A8D /* trail.binary */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		B52DC3F02444B27200D673DC /* AGLKit */ = {
@@ -286,15 +346,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				2932BB8F243F18040079C2B7 /* LaunchScreen.storyboard in Resources */,
-				B52DC42E2444C5C500D673DC /* Storyboard_1.storyboard in Resources */,
+				297288CD24456D8000FD7A8D /* trail.binary in Resources */,
+				297288CC24456D8000FD7A8D /* OpenGL_ES_for_iOS_57x57.png in Resources */,
+				297288CF24456D8000FD7A8D /* OpenGL_ES_for_iOS_114x114.png in Resources */,
+				297288CB24456D8000FD7A8D /* OpenGL_ES_for_iOS_72x72.png in Resources */,
 				B52DC4192444B27200D673DC /* AGLKTextureMatrix2PointLightShader.vsh in Resources */,
 				B52DC41D2444B27200D673DC /* AGLKSkyboxShader.vsh in Resources */,
 				2932BB8C243F18040079C2B7 /* Assets.xcassets in Resources */,
-				B52DC42C2444C0F700D673DC /* Storyboard_2.storyboard in Resources */,
 				B52DC41B2444B27200D673DC /* AGLKPointParticleShader.vsh in Resources */,
+				29D60DC72446ED1F009C74DD /* grid.png in Resources */,
 				B52DC41A2444B27200D673DC /* AGLKSkyboxShader.fsh in Resources */,
+				297288D024456D8000FD7A8D /* leaves.gif in Resources */,
 				B52DC41C2444B27200D673DC /* AGLKTextureMatrix2PointLightShader.fsh in Resources */,
+				297288D124456D8000FD7A8D /* beetle.png in Resources */,
 				B52DC4182444B27200D673DC /* AGLKPointParticleShader.fsh in Resources */,
+				297288CE24456D8000FD7A8D /* Default-568h@2x.png in Resources */,
 				2932BB8A243F17FF0079C2B7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,8 +377,8 @@
 				B52DC4162444B27200D673DC /* AGLKTextureLoader.m in Sources */,
 				B52DC4112444B27200D673DC /* AGLKContext.m in Sources */,
 				2932BB87243F17FF0079C2B7 /* ViewController.m in Sources */,
-				29AD4A792440AE24007CE4F7 /* OpenGLES_Class_1.m in Sources */,
-				B52DC42A2444BADE00D673DC /* OpenGLES_Class_2.m in Sources */,
+				29AD4A792440AE24007CE4F7 /* OpenGLES_Class_1_1.m in Sources */,
+				B52DC42A2444BADE00D673DC /* OpenGLES_Class_1_2.m in Sources */,
 				B52DC4172444B27200D673DC /* AGLKCollision.m in Sources */,
 				2932BB81243F17FF0079C2B7 /* AppDelegate.m in Sources */,
 				2932BB92243F18040079C2B7 /* main.m in Sources */,
@@ -321,7 +387,9 @@
 				2932BB84243F17FF0079C2B7 /* SceneDelegate.m in Sources */,
 				2932BBA0243F1F650079C2B7 /* GLMainViewController.m in Sources */,
 				B52DC4102444B27200D673DC /* AGLKTextureTransformBaseEffect.m in Sources */,
+				29D60DC42446E941009C74DD /* OpenGLES_Class_2_2.m in Sources */,
 				B52DC4122444B27200D673DC /* AGLKFrustum.m in Sources */,
+				297288BF24456C0200FD7A8D /* OpenGLES_Class_2_1.m in Sources */,
 				B52DC41F2444B27200D673DC /* AGLKFilters.m in Sources */,
 				B52DC40F2444B27200D673DC /* AGLKView.m in Sources */,
 			);
